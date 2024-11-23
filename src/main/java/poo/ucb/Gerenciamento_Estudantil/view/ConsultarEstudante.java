@@ -19,9 +19,8 @@ public class ConsultarEstudante extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(600, 400);
         setLocationRelativeTo(null);
-        setVisible(true);
 
-        buttonVoltar.addActionListener(new ActionListener() { // Botão voltar
+        buttonVoltar.addActionListener(new ActionListener() { // Botão Voltar
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
@@ -34,9 +33,8 @@ public class ConsultarEstudante extends JFrame {
                 String nome = textFieldNome.getText();
                 // TODO enviar nome para pesquisa na DB
 
-                int i = 0;
-
                 // if (estudante encontrado) {apresentar tela de editar ou excluir}
+                int i = 0; // Valor arbitrário para testes
                 if (i == 0) {
                     EditarEstudante janelaEditEstudante = new EditarEstudante();
                     janelaEditEstudante.setVisible(true);
@@ -50,7 +48,8 @@ public class ConsultarEstudante extends JFrame {
         buttonEnviarMatricula.addActionListener(new ActionListener() { // Botão Enviar (matrícula)
             @Override
             public void actionPerformed(ActionEvent e) {
-                try { // Pegar input de matrícula
+                // Pegar input de matrícula
+                try {
                     int matricula = Integer.parseInt(textFieldMatricula.getText());
                 }
                 catch (NumberFormatException exception) {
@@ -59,9 +58,10 @@ public class ConsultarEstudante extends JFrame {
 
                 // TODO enviar matrícula para pesquisa na DB
 
-                int i = 1;
+
 
                 // if (estudante encontrado) {apresentar tela de editar ou excluir}
+                int i = 0; // Valor arbitrário para testes
                 if (i == 0) {
                     EditarEstudante janelaEditEstudante = new EditarEstudante();
                     janelaEditEstudante.setVisible(true);

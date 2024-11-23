@@ -4,19 +4,19 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class EditarEstudante extends JFrame {
+public class EditarCurso extends JFrame {
     private JTextField textFieldNome;
-    private JTextField textFieldIdade;
+    private JTextField textFieldCHoraria;
     private JButton buttonSalvarNome;
+    private JButton buttonSalvarCHoraria;
     private JButton buttonVoltar;
-    private JPanel janelaEditEstudante;
-    private JButton buttonSalvarIdade;
     private JButton buttonExcluir;
+    private JPanel janelaEditCurso;
 
-    public EditarEstudante() {
-    // Primeiras configurações
-        setContentPane(janelaEditEstudante);
-        setTitle("Janela Editar Estudante");
+    public EditarCurso() {
+    // Configurações iniciais
+        setContentPane(janelaEditCurso);
+        setTitle("Janela Editar Curso");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(600, 400);
         setLocationRelativeTo(null);
@@ -39,29 +39,29 @@ public class EditarEstudante extends JFrame {
             }
         });
 
-        buttonSalvarIdade.addActionListener(new ActionListener() { // Botão Salvar Alterações (idade)
+        buttonSalvarCHoraria.addActionListener(new ActionListener() { // Botão Salvar Alterações (carga horária)
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Pegar input de nova idade
+                // Pegar input de nova carga horária
                 try {
-                    int novaIdade = Integer.parseInt(textFieldIdade.getText());
+                    int novaIdade = Integer.parseInt(textFieldCHoraria.getText());
                 }
                 catch (NumberFormatException exception) {
-                    JOptionPane.showMessageDialog(EditarEstudante.this, "Insira um valor numérico.");
+                    JOptionPane.showMessageDialog(EditarCurso.this, "Insira um valor numérico.");
                 }
 
                 if (Main.confirmar()) {
-                    // TODO salvar alterações de idade
+                    // TODO salvar alterações de carga horária
                 }
             }
         });
 
-        buttonExcluir.addActionListener(new ActionListener() { // Botão Excluir Estudante
+        buttonExcluir.addActionListener(new ActionListener() { // Botão Excluir Curso
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 if (Main.confirmar()) {
-                    // TODO excluir estudante
+                    // TODO excluir curso
                 }
             }
         });

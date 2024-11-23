@@ -19,28 +19,29 @@ public class CadastrarEstudante extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(600, 400);
         setLocationRelativeTo(null);
-        setVisible(true);
 
-        buttonVoltar.addActionListener(new ActionListener() { // Botão voltar (fecha aba)
+        buttonVoltar.addActionListener(new ActionListener() { // Botão Voltar (fecha aba)
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
             }
         });
 
-        buttonEnviar.addActionListener(new ActionListener() { // Botão enviar
+        buttonEnviar.addActionListener(new ActionListener() { // Botão Enviar
             @Override
             public void actionPerformed(ActionEvent e) {
                 String nome = textFieldNome.getText(); // Pegar input de nome
 
-                try { // Pegar input de idade
+                // Pegar input de idade
+                try {
                     int idade = Integer.parseInt(textFieldIdade.getText());
                 }
                 catch (NumberFormatException exception) {
                     JOptionPane.showMessageDialog(CadastrarEstudante.this, "Insira um valor numérico.");
                 }
 
-                try { // Pegar input de matrícula
+                // Pegar input de matrícula
+                try {
                     int matricula = Integer.parseInt(textFieldMatricula.getText());
                 }
                 catch (NumberFormatException exception) {
