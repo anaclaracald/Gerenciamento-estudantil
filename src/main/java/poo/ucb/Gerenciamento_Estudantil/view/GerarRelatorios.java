@@ -1,6 +1,7 @@
 package poo.ucb.Gerenciamento_Estudantil.view;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import poo.ucb.Gerenciamento_Estudantil.model.services.CursoService;
 import poo.ucb.Gerenciamento_Estudantil.model.services.EstudanteService;
 import poo.ucb.Gerenciamento_Estudantil.model.services.ProfessorService;
@@ -12,6 +13,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+@Component
 public class GerarRelatorios extends JFrame {
     private JPanel janelaRelatorios;
     private JTextField textFieldMatricula;
