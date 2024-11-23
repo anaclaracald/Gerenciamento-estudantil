@@ -2,6 +2,7 @@ package poo.ucb.Gerenciamento_Estudantil.model.services;
 
 import org.hibernate.annotations.SecondaryRow;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import poo.ucb.Gerenciamento_Estudantil.model.entities.Professor;
 import poo.ucb.Gerenciamento_Estudantil.model.repositories.ProfessorRepository;
@@ -20,7 +21,7 @@ public class ProfessorService {
     }
 
     public List<Professor> listarProfessores(){
-        return professorRepository.findAll();
+        return professorRepository.findAll(Sort.by(Sort.Direction.ASC, "nome"));
     }
 
     public Optional<Professor> buscarPorNome(String nome){

@@ -16,14 +16,12 @@ public class EstudanteService {
     @Autowired
     private EstudanteRepository estudanteRepository;
 
-    // CRUD - criar, ler, atuallizar e deletar
-
     public Estudante cadastrarEstudante(Estudante estudante){
         return estudanteRepository.save(estudante);
     }
 
     public List<Estudante> listarEstudantes(){
-        return estudanteRepository.findAll();
+        return estudanteRepository.findAll(Sort.by(Sort.Direction.ASC, "nome"));
     }
 
     public Optional<Estudante> buscarPorMatricula(Long matricula){

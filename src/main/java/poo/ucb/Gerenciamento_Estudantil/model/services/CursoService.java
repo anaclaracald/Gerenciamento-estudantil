@@ -2,6 +2,7 @@ package poo.ucb.Gerenciamento_Estudantil.model.services;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import poo.ucb.Gerenciamento_Estudantil.model.entities.Curso;
 import poo.ucb.Gerenciamento_Estudantil.model.repositories.CursoRepository;
@@ -20,7 +21,7 @@ public class CursoService {
     }
 
     public List<Curso> listarCursos(){
-        return cursoRepository.findAll();
+        return cursoRepository.findAll(Sort.by(Sort.Direction.ASC, "nome"));
     }
 
     public Optional<Curso> buscarPorNome(String nome){
