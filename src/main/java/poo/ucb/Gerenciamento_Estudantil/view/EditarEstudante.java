@@ -29,7 +29,6 @@ public class EditarEstudante extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(600, 400);
         setLocationRelativeTo(null);
-        setVisible(true);
 
         buttonVoltar.addActionListener(new ActionListener() { // Botão Voltar (fecha aba)
             @Override
@@ -41,6 +40,7 @@ public class EditarEstudante extends JFrame {
         buttonSalvarNome.addActionListener(new ActionListener() { // botão salvar novo nome
             @Override
             public void actionPerformed(ActionEvent e) {
+                // Pegar input de nova idade
                 try {
                     long matricula = Long.parseLong(textFieldMatricula.getText().trim());
                     Optional<Estudante> estudanteOptional = estudanteService.buscarPorMatricula(matricula);

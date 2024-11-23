@@ -32,7 +32,7 @@
         <properties>
           <font name="Inter Semi Bold" size="12" style="0"/>
           <foreground color="-14867927"/>
-          <text value="Insira seu nome:"/>
+          <text value="Insira o nome:"/>
         </properties>
       </component>
       <component id="c6c92" class="javax.swing.JTextField" binding="textFieldNome">
@@ -54,7 +54,7 @@
         <properties>
           <font name="Inter Semi Bold" size="12" style="0"/>
           <foreground color="-14867927"/>
-          <text value="Insira sua idade:"/>
+          <text value="Insira a idade:"/>
         </properties>
       </component>
       <component id="9aaa5" class="javax.swing.JTextField" binding="textFieldIdade">
@@ -76,7 +76,7 @@
         <properties>
           <font name="Inter Semi Bold" size="12" style="0"/>
           <foreground color="-14867927"/>
-          <text value="Insira sua matrícula:"/>
+          <text value="Insira a matrícula:"/>
         </properties>
       </component>
       <component id="19689" class="javax.swing.JTextField" binding="textFieldMatricula">

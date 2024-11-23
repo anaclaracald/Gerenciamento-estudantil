@@ -45,7 +45,6 @@ public class GerarRelatorios extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(600, 400);
         setLocationRelativeTo(null);
-        setVisible(true);
 
         SAIRButton.addActionListener(new ActionListener() { // Botão sair (fecha aba)
             @Override
