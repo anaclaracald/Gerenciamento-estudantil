@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 @Component
-public class Main extends JFrame {
+public class MenuInicial extends JFrame {
     private JButton menuEstudanteButton;
     private JButton MENUPROFESSORButton;
     private JButton MENUCURSOButton;
@@ -15,7 +15,7 @@ public class Main extends JFrame {
     private JPanel janelaPrincipal;
     private JButton GERARRELATORIOSButton;
 
-    public Main () {
+    public MenuInicial() {
     // Primeiras configurações
         setContentPane(janelaPrincipal);
         setTitle("Janela Principal");
@@ -75,7 +75,4 @@ public class Main extends JFrame {
         return option == JOptionPane.YES_OPTION;
     }
 
-    public static void main (String[] args) {
-        new Main();
-    }
 }

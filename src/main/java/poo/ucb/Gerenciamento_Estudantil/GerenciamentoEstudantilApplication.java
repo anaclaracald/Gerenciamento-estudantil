@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import poo.ucb.Gerenciamento_Estudantil.view.CadastrarEstudante;
+import poo.ucb.Gerenciamento_Estudantil.view.MenuInicial;
 
 import javax.swing.SwingUtilities;
 
@@ -11,6 +12,7 @@ import javax.swing.SwingUtilities;
 public class GerenciamentoEstudantilApplication {
 
 	public static void main(String[] args) {
+		new MenuInicial();
 		// Inicia o contexto Spring
 		ConfigurableApplicationContext context = SpringApplication.run(GerenciamentoEstudantilApplication.class, args);
 

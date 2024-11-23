@@ -36,7 +36,7 @@ public class EditarCurso extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String novoNome = textFieldNome.getText();
 
-                if (Main.confirmar()) {
+                if (MenuInicial.confirmar()) {
                     // TODO salvar alterações de nome
                 }
             }
@@ -53,7 +53,7 @@ public class EditarCurso extends JFrame {
                     JOptionPane.showMessageDialog(EditarCurso.this, "Insira um valor numérico.");
                 }
 
-                if (Main.confirmar()) {
+                if (MenuInicial.confirmar()) {
                     // TODO salvar alterações de carga horária
                 }
             }
@@ -63,7 +63,7 @@ public class EditarCurso extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                if (Main.confirmar()) {
+                if (MenuInicial.confirmar()) {
                     // TODO excluir curso
                 }
             }
