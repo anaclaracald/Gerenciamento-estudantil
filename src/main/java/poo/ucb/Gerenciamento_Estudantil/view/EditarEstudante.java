@@ -45,7 +45,12 @@ public class EditarEstudante extends JFrame {
         buttonSalvarIdade.addActionListener(new ActionListener() { // Botão Salvar Alterações (idade)
             @Override
             public void actionPerformed(ActionEvent e) {
-                int novaIdade = parseInt(textFieldIdade.getText());
+                try {
+                    int novaIdade = Integer.parseInt(textFieldIdade.getText());
+                }
+                catch (NumberFormatException exception) {
+                    JOptionPane.showMessageDialog(EditarEstudante.this, "Insira um valor numérico.");
+                }
 
                 if (Main.confirmar()) {
                     // TODO salvar alterações de idade

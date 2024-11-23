@@ -10,6 +10,7 @@ public class Main extends JFrame {
     private JButton MENUCURSOButton;
     private JButton sairDoProgramaButton;
     private JPanel janelaPrincipal;
+    private JButton GERARRELATORIOSButton;
 
     public Main () {
     // Primeiras configurações
@@ -48,6 +49,14 @@ public class Main extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 MenuCurso janelaCurso = new MenuCurso();
                 janelaCurso.setVisible(true);
+            }
+        });
+
+        GERARRELATORIOSButton.addActionListener(new ActionListener() { // Abrir aba Gerar Relatórios
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GerarRelatorios janelaRelartorios = new GerarRelatorios();
+                janelaRelartorios.setVisible(true);
             }
         });
     }
