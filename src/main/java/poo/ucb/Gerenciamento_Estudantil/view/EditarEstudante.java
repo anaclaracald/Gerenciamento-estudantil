@@ -4,8 +4,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static java.lang.Integer.parseInt;
-
 public class EditarEstudante extends JFrame {
     private JTextField textFieldNome;
     private JTextField textFieldIdade;

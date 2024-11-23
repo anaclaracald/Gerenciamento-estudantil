@@ -4,8 +4,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static java.lang.Integer.*;
-
 public class CadastrarEstudante extends JFrame {
     private JTextField textFieldNome;
     private JTextField textFieldIdade;
