@@ -22,49 +22,38 @@ public class CadastrarEstudante extends JFrame {
     private EstudanteService estudanteService; // injeta o serviço com os métodos
 
     public CadastrarEstudante() {
-    // Primeiras configurações
+        // Primeiras configurações
         setContentPane(janelaCadEstudante);
         setTitle("Janela Cadastrar Estudante");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(600, 400);
         setLocationRelativeTo(null);
+        setVisible(true);
 
-        buttonVoltar.addActionListener(new ActionListener() { // Botão Voltar (fecha aba)
+        buttonVoltar.addActionListener(new ActionListener() { // Botão voltar (fecha aba)
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
             }
         });
 
-        buttonEnviar.addActionListener(new ActionListener() { // Botão Enviar
+        buttonEnviar.addActionListener(new ActionListener() { // Botão enviar
             @Override
             public void actionPerformed(ActionEvent e) {
                 String nome = textFieldNome.getText().trim(); // Pegar input de nome
                 int idade = 0;
                 long matricula = 0;
 
-<<<<<<< HEAD
                 try { // Pegar input de idade
                     idade = Integer.parseInt(textFieldIdade.getText());
-=======
-                // Pegar input de idade
-                try {
-                    int idade = Integer.parseInt(textFieldIdade.getText());
->>>>>>> 36448243fd9f79723be6132701fa05bdb1d9eea0
                 }
                 catch (NumberFormatException exception) {
                     JOptionPane.showMessageDialog(CadastrarEstudante.this, "Insira um valor numérico.");
                     return;
                 }
 
-<<<<<<< HEAD
                 try { // Pegar input de matrícula
                     matricula = Integer.parseInt(textFieldMatricula.getText());
-=======
-                // Pegar input de matrícula
-                try {
-                    int matricula = Integer.parseInt(textFieldMatricula.getText());
->>>>>>> 36448243fd9f79723be6132701fa05bdb1d9eea0
                 }
                 catch (NumberFormatException exception) {
                     JOptionPane.showMessageDialog(CadastrarEstudante.this, "Insira um valor numérico.");
