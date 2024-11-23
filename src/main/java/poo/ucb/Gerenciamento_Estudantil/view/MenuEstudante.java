@@ -1,0 +1,45 @@
+package poo.ucb.Gerenciamento_Estudantil.view;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class MenuEstudante extends JFrame {
+    private JButton CADASTRARESTUDANTEButton;
+    private JButton CONSULTARButton;
+    private JButton SAIRButton;
+    private JPanel janelaEstudante;
+
+    public MenuEstudante () {
+    // Primeiras configurações
+        setContentPane(janelaEstudante);
+        setTitle("Janela Estudante");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setSize(600, 400);
+        setLocationRelativeTo(null);
+        setVisible(true);
+
+        SAIRButton.addActionListener(new ActionListener() { // Fechar aba
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+            }
+        });
+
+        CADASTRARESTUDANTEButton.addActionListener(new ActionListener() { // Abrir aba Cadastrar Estudante
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CadastrarEstudante janelaCadEstudante = new CadastrarEstudante();
+                janelaCadEstudante.setVisible(true);
+            }
+        });
+
+        CONSULTARButton.addActionListener(new ActionListener() { // Abrir aba Consultar Estudante
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ConsultarEstudante janelaConsEstudante = new ConsultarEstudante();
+                janelaConsEstudante.setVisible(true);
+            }
+        });
+    }
+}
