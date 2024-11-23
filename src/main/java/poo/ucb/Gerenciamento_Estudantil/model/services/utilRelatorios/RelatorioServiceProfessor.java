@@ -14,7 +14,7 @@ import java.io.ByteArrayOutputStream;
 @Service
 public class RelatorioServiceProfessor{
 
-    public byte[] gerarRelatorioCursoPDF(ProfessorService professorService) {
+    public byte[] gerarRelatorioProfessoresPDF(ProfessorService professorService) {
         try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
             PdfWriter writer = new PdfWriter(out);
             PdfDocument pdf = new PdfDocument(writer);

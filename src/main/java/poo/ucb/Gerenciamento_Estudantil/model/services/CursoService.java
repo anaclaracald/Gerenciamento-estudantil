@@ -28,6 +28,10 @@ public class CursoService {
         return cursoRepository.findByNome(nome);
     }
 
+    public Optional<Curso> buscarPorId(Long id){
+        return cursoRepository.findById(id);
+    }
+
     public Curso editarCurso(Long id, Curso cursoAtualizado){
         return cursoRepository.findById(id).map( curso -> {
             curso.setNomeCurso(cursoAtualizado.getNomeCurso());

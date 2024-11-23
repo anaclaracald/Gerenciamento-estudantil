@@ -1,9 +1,15 @@
 package poo.ucb.Gerenciamento_Estudantil.view;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import poo.ucb.Gerenciamento_Estudantil.model.entities.Estudante;
+import poo.ucb.Gerenciamento_Estudantil.model.services.EstudanteService;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+@Component
 public class CadastrarEstudante extends JFrame {
     private JTextField textFieldNome;
     private JTextField textFieldIdade;
@@ -11,6 +17,9 @@ public class CadastrarEstudante extends JFrame {
     private JButton buttonEnviar;
     private JButton buttonVoltar;
     private JPanel janelaCadEstudante;
+
+    @Autowired
+    private EstudanteService estudanteService; // injeta o serviço com os métodos
 
     public CadastrarEstudante() {
     // Primeiras configurações
@@ -31,23 +40,45 @@ public class CadastrarEstudante extends JFrame {
         buttonEnviar.addActionListener(new ActionListener() { // Botão enviar
             @Override
             public void actionPerformed(ActionEvent e) {
-                String nome = textFieldNome.getText(); // Pegar input de nome
+                String nome = textFieldNome.getText().trim(); // Pegar input de nome
+                int idade = 0;
+                long matricula = 0;
 
                 try { // Pegar input de idade
-                    int idade = Integer.parseInt(textFieldIdade.getText());
+                    idade = Integer.parseInt(textFieldIdade.getText());
                 }
                 catch (NumberFormatException exception) {
                     JOptionPane.showMessageDialog(CadastrarEstudante.this, "Insira um valor numérico.");
+                    return;
                 }
 
                 try { // Pegar input de matrícula
-                    int matricula = Integer.parseInt(textFieldMatricula.getText());
+                    matricula = Integer.parseInt(textFieldMatricula.getText());
                 }
                 catch (NumberFormatException exception) {
                     JOptionPane.showMessageDialog(CadastrarEstudante.this, "Insira um valor numérico.");
+                    return;
                 }
 
-                // TODO - passar dados para o banco de dados
+                // Criação do objeto
+                Estudante estudante = new Estudante();
+                estudante.setNome(nome);
+                estudante.setIdade(idade);
+                estudante.setMatricula(matricula);
+
+                // Salvar no banco de dados
+
+                try{
+                    estudanteService.cadastrarEstudante(estudante);
+                    JOptionPane.showMessageDialog(CadastrarEstudante.this, "Estudante cadastrado com sucesso!");
+
+                    //Limpar campos
+                    textFieldNome.setText("");
+                    textFieldIdade.setText("");
+                    textFieldMatricula.setText("");
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(CadastrarEstudante.this, "Erro ao cadastrar o estudante: " + ex.getMessage());
+                }
             }
         });
     }

@@ -8,6 +8,8 @@ import com.itextpdf.layout.element.Table;
 import org.springframework.stereotype.Service;
 import poo.ucb.Gerenciamento_Estudantil.model.entities.Curso;
 import poo.ucb.Gerenciamento_Estudantil.model.entities.Estudante;
+import poo.ucb.Gerenciamento_Estudantil.model.services.CursoService;
+import poo.ucb.Gerenciamento_Estudantil.model.services.EstudanteService;
 
 import java.io.ByteArrayOutputStream;
 import java.util.List;
@@ -15,11 +17,14 @@ import java.util.List;
 @Service
 public class RelatorioServiceCurso {
 
-    public byte[] gerarRelatorioCursoPDF(Curso curso, List<Estudante> estudantes) {
+    public byte[] gerarRelatorioCursoPDF(CursoService cursoService, EstudanteService estudanteService, Long id) {
         try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
             PdfWriter writer = new PdfWriter(out);
             PdfDocument pdf = new PdfDocument(writer);
             Document document = new Document(pdf);
+
+            Curso curso = cursoService.buscarPorId(id)
+                    .orElseThrow(() -> new RuntimeException("Curso não encontrado"));
 
             // Título
             document.add(new Paragraph("Relatório de Curso").setFontSize(14));
@@ -35,7 +40,7 @@ public class RelatorioServiceCurso {
             table.addCell("ID");
             table.addCell("Nome");
 
-            for (Estudante estudante : estudantes) {
+            for (Estudante estudante : estudanteService.listarEstudantes()) {
                 table.addCell(String.valueOf(estudante.getMatricula()));
                 table.addCell(estudante.getNome());
             }
