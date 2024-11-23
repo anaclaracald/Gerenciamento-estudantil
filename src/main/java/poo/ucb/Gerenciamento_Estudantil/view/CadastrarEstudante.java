@@ -4,8 +4,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static java.lang.Integer.parseInt;
-
 public class CadastrarEstudante extends JFrame {
     private JTextField textFieldNome;
     private JTextField textFieldIdade;
@@ -33,9 +31,21 @@ public class CadastrarEstudante extends JFrame {
         buttonEnviar.addActionListener(new ActionListener() { // Botão enviar
             @Override
             public void actionPerformed(ActionEvent e) {
-                String nome = textFieldNome.getText();
-                int idade = parseInt(textFieldIdade.getText());
-                int matricula = parseInt(textFieldMatricula.getText());
+                String nome = textFieldNome.getText(); // Pegar input de nome
+
+                try { // Pegar input de idade
+                    int idade = Integer.parseInt(textFieldIdade.getText());
+                }
+                catch (NumberFormatException exception) {
+                    JOptionPane.showMessageDialog(CadastrarEstudante.this, "Insira um valor numérico.");
+                }
+
+                try { // Pegar input de matrícula
+                    int matricula = Integer.parseInt(textFieldMatricula.getText());
+                }
+                catch (NumberFormatException exception) {
+                    JOptionPane.showMessageDialog(CadastrarEstudante.this, "Insira um valor numérico.");
+                }
 
                 // TODO - passar dados para o banco de dados
             }
