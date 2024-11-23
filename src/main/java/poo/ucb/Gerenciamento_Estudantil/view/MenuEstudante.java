@@ -17,7 +17,6 @@ public class MenuEstudante extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(600, 400);
         setLocationRelativeTo(null);
-        setVisible(true);
 
         SAIRButton.addActionListener(new ActionListener() { // Fechar aba
             @Override

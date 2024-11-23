@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="poo.ucb.Gerenciamento_Estudantil.view.MenuCurso">
-  <grid id="27dc6" binding="janelaCurso" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="poo.ucb.Gerenciamento_Estudantil.view.Vinculacao">
+  <grid id="27dc6" binding="janelaVinculacao" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>
     </constraints>
     <properties>
       <background color="-1"/>
-      <font name="Inter Semi Bold" size="12"/>
     </properties>
     <border type="none"/>
     <children>
-      <component id="bf7e9" class="javax.swing.JLabel">
+      <component id="59c9e" class="javax.swing.JLabel">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="Inter Semi Bold" size="14" style="1"/>
           <foreground color="-14867927"/>
-          <text value="MENU CURSO"/>
+          <text value="VINCULAÇÃO"/>
         </properties>
       </component>
-      <component id="5d17d" class="javax.swing.JButton" binding="CADASTRARCURSOButton" default-binding="true">
+      <component id="f4edb" class="javax.swing.JButton" binding="buttonMatEstudante">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -29,10 +28,10 @@
           <background color="-13914754"/>
           <font name="Inter Semi Bold" size="12"/>
           <foreground color="-1"/>
-          <text value="CADASTRAR CURSO"/>
+          <text value="MATRICULAR ESTUDANTE"/>
         </properties>
       </component>
-      <component id="60ff2" class="javax.swing.JButton" binding="CONSULTARButton" default-binding="true">
+      <component id="ec6d4" class="javax.swing.JButton" binding="buttonAssociarProf">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -40,10 +39,10 @@
           <background color="-13914754"/>
           <font name="Inter Semi Bold" size="12"/>
           <foreground color="-1"/>
-          <text value="CONSULTAR"/>
+          <text value="ASSOCIAR PROFESSOR"/>
         </properties>
       </component>
-      <component id="32c0f" class="javax.swing.JButton" binding="buttonVinculacao">
+      <component id="e7f61" class="javax.swing.JButton" binding="buttonVoltar">
         <constraints>
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -51,18 +50,7 @@
           <background color="-13914754"/>
           <font name="Inter Semi Bold" size="12"/>
           <foreground color="-1"/>
-          <text value="VINCULAÇÃO"/>
-        </properties>
-      </component>
-      <component id="85b45" class="javax.swing.JButton" binding="SAIRButton" default-binding="true">
-        <constraints>
-          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-13914754"/>
-          <font name="Inter Semi Bold" size="12"/>
-          <foreground color="-1"/>
-          <text value="SAIR"/>
+          <text value="VOLTAR"/>
         </properties>
       </component>
     </children>
