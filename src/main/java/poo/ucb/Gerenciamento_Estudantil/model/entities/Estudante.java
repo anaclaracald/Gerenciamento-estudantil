@@ -1,7 +1,6 @@
 package poo.ucb.Gerenciamento_Estudantil.model.entities;
 
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
 
 import java.util.List;
 
@@ -10,45 +9,35 @@ import java.util.List;
 public class Estudante extends Pessoa {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    int matricula;
-
+    @Column(name = "id_estudante", nullable = false, unique = true)
+    private Long matricula;
     @ManyToMany(mappedBy = "estudantes")
     private List<Curso> curso;
 
-
-    // métodos
-    @Override
-    public void exibirDados() {
-        // TODO Auto-generated method stub
-
+    public Estudante() {
     }
 
-    @Override
-    public void excluir() {
-        // TODO Auto-generated method stub
-
+    public Estudante(String nome, int idade, Long matricula, List<Curso> curso) {
+        super(nome, idade);
+        this.matricula = matricula;
+        this.curso = curso;
     }
-
-    @Override
-    public void editar() {
-        // TODO Auto-generated method stub
-
-    }
-
 
     // getters e setters
-    public int getMatricula() {
+    public Long getMatricula() {
         return matricula;
     }
 
-    public void setMatricula(int matricula) {
+    public void setMatricula(Long matricula) {
         this.matricula = matricula;
     }
 
-    @Override
-    public void cadastrar() {
-        // TODO Auto-generated method stub
-
+    public List<Curso> getCurso() {
+        return curso;
     }
+
+    public void setCurso(List<Curso> curso) {
+        this.curso = curso;
+    }
+
 }

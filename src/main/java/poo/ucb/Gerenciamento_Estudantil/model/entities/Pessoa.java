@@ -1,21 +1,25 @@
 package poo.ucb.Gerenciamento_Estudantil.model.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
+import org.springframework.data.annotation.Id;
 
 @MappedSuperclass
 public abstract class Pessoa {
 
-    // atributos
+    @Column(name = "nome", nullable = false)
     private String nome;
+    @Column(name = "idade", nullable = false)
     private int idade;
 
 
-    // métodos
-    public abstract void exibirDados();
-    public abstract void cadastrar();
-    public abstract void editar();
-    public abstract void excluir();
+    public Pessoa() {
+    }
 
+    public Pessoa(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
 
     // getters e setters
     public String getNome() {

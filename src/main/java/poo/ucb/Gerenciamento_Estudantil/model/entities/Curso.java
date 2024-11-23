@@ -8,14 +8,13 @@ import java.util.List;
 @Entity
 @Table(name = "curso")
 public class Curso {
-    // atributos
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "curso_id")
+    @Column(name = "curso_id", nullable = false, unique = true)
     private Long id;
-    @Column(name = "nome")
-    private String nomeCurso;
-    @Column(name = "cargaHoraria")
+    @Column(name = "nomeCurso", nullable = false)
+    private String nome;
+    @Column(name = "cargaHoraria", nullable = false)
     private int cargaHoraria;
     @ManyToOne
     private Professor professor;
@@ -28,26 +27,20 @@ public class Curso {
     )
     private List<Estudante> estudantes;
 
-    // métodos
-    public void editar() {
-        // TODO
+    public Curso(Long id, String nome, int cargaHoraria, Professor professor, List<Estudante> estudantes) {
+        this.id = id;
+        this.nome = nome;
+        this.cargaHoraria = cargaHoraria;
+        this.professor = professor;
+        this.estudantes = estudantes;
     }
-
-    public void excluir() {
-        // TODO
-    }
-
-    public void associarProfessor() {
-        // TODO
-    }
-
 
     // getters e setters
     public String getNomeCurso() {
-        return nomeCurso;
+        return nome;
     }
-    public void setNomeCurso(String nomeCurso) {
-        this.nomeCurso = nomeCurso;
+    public void setNomeCurso(String nome) {
+        this.nome = nome;
     }
     public int getCargaHoraria() {
         return cargaHoraria;
