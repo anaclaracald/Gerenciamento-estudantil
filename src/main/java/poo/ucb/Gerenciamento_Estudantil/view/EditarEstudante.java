@@ -1,6 +1,7 @@
 package poo.ucb.Gerenciamento_Estudantil.view;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import poo.ucb.Gerenciamento_Estudantil.model.entities.Estudante;
 import poo.ucb.Gerenciamento_Estudantil.model.services.EstudanteService;
 
@@ -9,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Optional;
 
+@Component
 public class EditarEstudante extends JFrame {
     private JTextField textFieldNome;
     private JTextField textFieldIdade;
