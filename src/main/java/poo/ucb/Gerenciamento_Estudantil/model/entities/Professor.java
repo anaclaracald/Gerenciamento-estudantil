@@ -29,6 +29,10 @@ public class Professor extends Pessoa {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getEspecialidade() {
         return especialidade;
     }
