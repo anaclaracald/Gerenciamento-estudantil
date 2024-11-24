@@ -3,8 +3,7 @@ package poo.ucb.Gerenciamento_Estudantil;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import poo.ucb.Gerenciamento_Estudantil.view.CadastrarEstudante;
-import poo.ucb.Gerenciamento_Estudantil.view.MenuInicial;
+import poo.ucb.Gerenciamento_Estudantil.view.*;
 
 import javax.swing.SwingUtilities;
 
@@ -19,8 +18,8 @@ public class GerenciamentoEstudantilApplication {
 		// Lança a interface Swing no Event Dispatch Thread
 		SwingUtilities.invokeLater(() -> {
 			// Obtém o bean da interface gráfica gerenciado pelo Spring
-			CadastrarEstudante cadastrarEstudante = context.getBean(CadastrarEstudante.class);
-			cadastrarEstudante.setVisible(true); // Exibe a janela
+			MenuInicial menuInicial = context.getBean(MenuInicial.class);
+			menuInicial.setVisible(true); // Exibe a janela
 		});
 	}
 }

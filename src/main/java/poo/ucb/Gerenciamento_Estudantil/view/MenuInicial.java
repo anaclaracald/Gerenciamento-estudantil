@@ -1,5 +1,6 @@
 package poo.ucb.Gerenciamento_Estudantil.view;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.swing.*;
@@ -14,6 +15,7 @@ public class MenuInicial extends JFrame {
     private JButton sairDoProgramaButton;
     private JPanel janelaPrincipal;
     private JButton GERARRELATORIOSButton;
+
 
     public MenuInicial() {
     // Primeiras configurações

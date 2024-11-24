@@ -8,12 +8,11 @@ import java.awt.event.ActionListener;
 
 @Component
 public class MenuProfessor extends JFrame {
-    private JButton CADASTRARPROFESSORButton;
-    private JButton CONSULTARButton;
+
     private JButton SAIRButton;
     private JPanel janelaProfessor;
 
-    MenuProfessor () {
+    MenuProfessor() {
         setContentPane(janelaProfessor);
         setTitle("Janela Professor");
         setDefaultCloseOperation(EXIT_ON_CLOSE);

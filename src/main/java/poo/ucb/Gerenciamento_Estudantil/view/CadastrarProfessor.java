@@ -41,7 +41,7 @@ public class CadastrarProfessor extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String nome = textFieldNome.getText(); // Pegar input de nome
                 String especialidade = textFieldEspecialidade.getText(); // Pegar input de especialidade
-                Long id;
+                long id = 0;
 
                 try { // Pegar input do ID
                     id = Long.parseLong(textFieldId.getText());

@@ -2,6 +2,8 @@ package poo.ucb.Gerenciamento_Estudantil.view;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import poo.ucb.Gerenciamento_Estudantil.model.entities.Professor;
+import poo.ucb.Gerenciamento_Estudantil.model.services.ProfessorService;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -45,7 +47,7 @@ public class EditarProfessor extends JFrame {
                     long id = Long.parseLong(textFieldId.getText().trim());
                     Optional<Professor> professorOptional = professorService.buscarPorId(id);
 
-                    if (professorr.isPresent()) {
+                    if (professorOptional.isPresent()) {
                         Professor professor = professorOptional.get();
                         String novoNome = textFieldNome.getText().trim();
 
@@ -106,7 +108,7 @@ public class EditarProfessor extends JFrame {
                     );
 
                     if (confirmacao == JOptionPane.YES_OPTION) {
-                        professorService.deletarProfessor(id);
+                        professorService.excluirProfessor(id);
                         JOptionPane.showMessageDialog(EditarProfessor.this, "Professor excluído com sucesso!");
 
                         // Limpar campos

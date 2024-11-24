@@ -20,8 +20,10 @@ public class ConsultarEstudante extends JFrame {
     @Autowired
     private EstudanteService estudanteService;
 
+
     public ConsultarEstudante() {
         // Primeiras configurações
+
         setContentPane(janelaConsEstudante);
         setTitle("Janela Consultar Estudante");
         setDefaultCloseOperation(EXIT_ON_CLOSE);

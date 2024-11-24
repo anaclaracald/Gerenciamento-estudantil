@@ -2,6 +2,7 @@ package poo.ucb.Gerenciamento_Estudantil.view;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import poo.ucb.Gerenciamento_Estudantil.model.services.ProfessorService;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

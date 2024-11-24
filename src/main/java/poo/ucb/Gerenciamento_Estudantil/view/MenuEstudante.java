@@ -1,5 +1,6 @@
 package poo.ucb.Gerenciamento_Estudantil.view;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.swing.*;
@@ -12,6 +13,12 @@ public class MenuEstudante extends JFrame {
     private JButton CONSULTARButton;
     private JButton SAIRButton;
     private JPanel janelaEstudante;
+
+    @Autowired
+    private ConsultarEstudante consultarEstudante;
+
+    @Autowired
+    private CadastrarEstudante cadastrarEstudante;
 
     public MenuEstudante () {
     // Primeiras configurações
@@ -31,16 +38,14 @@ public class MenuEstudante extends JFrame {
         CADASTRARESTUDANTEButton.addActionListener(new ActionListener() { // Abrir aba Cadastrar Estudante
             @Override
             public void actionPerformed(ActionEvent e) {
-                CadastrarEstudante janelaCadEstudante = new CadastrarEstudante();
-                janelaCadEstudante.setVisible(true);
+                cadastrarEstudante.setVisible(true);
             }
         });
 
         CONSULTARButton.addActionListener(new ActionListener() { // Abrir aba Consultar Estudante
             @Override
             public void actionPerformed(ActionEvent e) {
-                ConsultarEstudante janelaConsEstudante = new ConsultarEstudante();
-                janelaConsEstudante.setVisible(true);
+                consultarEstudante.setVisible(true);
             }
         });
     }

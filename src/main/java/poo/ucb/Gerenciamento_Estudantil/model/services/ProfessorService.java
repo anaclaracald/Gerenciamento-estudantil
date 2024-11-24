@@ -28,6 +28,10 @@ public class ProfessorService {
         return professorRepository.findByNome(nome);
     }
 
+    public Optional<Professor> buscarPorId(Long id){
+        return professorRepository.findById(id);
+    }
+
     public Professor editarProfessor(Long id, Professor professorAtualizado){
         return professorRepository.findById(id).map(professor -> {
             professor.setNome(professorAtualizado.getNome());
