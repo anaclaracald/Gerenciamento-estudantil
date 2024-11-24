@@ -20,11 +20,28 @@ public class MenuProfessor extends JFrame {
         setSize(600, 400);
         setLocationRelativeTo(null);
 
-        SAIRButton.addActionListener(new ActionListener() {
+        SAIRButton.addActionListener(new ActionListener() { // Botão Sair (fecha aba)
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
             }
         });
+
+        CADASTRARPROFESSORButton.addActionListener(new ActionListener() { // Botão Cadastrar Professor
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CadastrarProfessor janelaCadProfessor = new CadastrarProfessor();
+                janelaCadProfessor.setVisible(true);
+            }
+        });
+
+        CONSULTARButton.addActionListener(new ActionListener() { // Botão Consultar
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ConsultarProfessor janelaConsProfessor = new ConsultarProfessor();
+                janelaConsProfessor.setVisible(true);
+            }
+        });
     }
+
 }
