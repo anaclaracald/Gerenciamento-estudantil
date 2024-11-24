@@ -24,7 +24,6 @@ public class MenuInicial extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(600, 400);
         setLocationRelativeTo(null);
-        setVisible(true);
 
         sairDoProgramaButton.addActionListener(new ActionListener() { // Botão sair (encerra programa)
             @Override

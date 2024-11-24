@@ -29,7 +29,7 @@ public class ConsultarEstudante extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(600, 400);
         setLocationRelativeTo(null);
-        setVisible(true);
+
 
         buttonVoltar.addActionListener(new ActionListener() { // Botão voltar
             @Override

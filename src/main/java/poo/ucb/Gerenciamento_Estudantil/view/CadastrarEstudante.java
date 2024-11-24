@@ -28,7 +28,7 @@ public class CadastrarEstudante extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(600, 400);
         setLocationRelativeTo(null);
-        setVisible(true);
+
 
         buttonVoltar.addActionListener(new ActionListener() { // Botão voltar (fecha aba)
             @Override
