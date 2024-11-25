@@ -23,32 +23,32 @@ public class EstudanteService {
     @Autowired
     private EstudanteRepository estudanteRepository;
 
-    public Estudante cadastrarEstudante(Estudante estudante) {
-        return this.estudanteRepository.save(estudante);
+    public void cadastrarEstudante(Estudante estudante) {
+        estudanteRepository.save(estudante);
     }
 
     public List<Estudante> listarEstudantes() {
-        return this.estudanteRepository.findAll(Sort.by(Sort.Direction.ASC, "nome"));
+        return estudanteRepository.findAll(Sort.by(Sort.Direction.ASC, "nome"));
     }
 
     public Optional<Estudante> buscarPorMatricula(Long matricula) {
-        return this.estudanteRepository.findById(matricula);
+        return estudanteRepository.findById(matricula);
     }
 
     public Optional<Estudante> buscarPorNome(String nome) {
-        return this.estudanteRepository.findByNome(nome);
+        return estudanteRepository.findByNome(nome);
     }
 
     public Estudante editarEstudante(Long id, Estudante estudanteAtualizado) {
         return estudanteRepository.findById(id).map(estudante -> {
             estudante.setNome(estudanteAtualizado.getNome());
             estudante.setIdade(estudanteAtualizado.getIdade());
-            return this.estudanteRepository.save(estudante);
+            return estudanteRepository.save(estudante);
         }).orElseThrow(() -> new RuntimeException("Estudante não encontrado"));
     }
 
     public void deletarEstudante(Long id) {
-        this.estudanteRepository.deleteById(id);
+        estudanteRepository.deleteById(id);
     }
 }
 
