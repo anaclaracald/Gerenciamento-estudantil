@@ -21,26 +21,26 @@ public class ProfessorService {
     }
 
     public List<Professor> listarProfessores(){
-        return professorRepository.findAll(Sort.by(Sort.Direction.ASC, "nome"));
+        return this.professorRepository.findAll(Sort.by(Sort.Direction.ASC, "nome"));
     }
 
     public Optional<Professor> buscarPorNome(String nome){
-        return professorRepository.findByNome(nome);
+        return this.professorRepository.findByNome(nome);
     }
 
     public Optional<Professor> buscarPorId(Long id){
-        return professorRepository.findById(id);
+        return this.professorRepository.findById(id);
     }
 
     public Professor editarProfessor(Long id, Professor professorAtualizado){
         return professorRepository.findById(id).map(professor -> {
             professor.setNome(professorAtualizado.getNome());
             professor.setEspecialidade(professorAtualizado.getEspecialidade());
-            return professorRepository.save(professor);
+            return this.professorRepository.save(professor);
         }).orElseThrow(() -> new RuntimeException("Professorr não encontrado"));
     }
 
     public void excluirProfessor(Long id) {
-        professorRepository.deleteById(id);
+        this.professorRepository.deleteById(id);
     }
 }

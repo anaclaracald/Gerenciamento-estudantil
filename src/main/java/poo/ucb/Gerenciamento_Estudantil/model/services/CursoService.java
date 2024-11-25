@@ -17,19 +17,19 @@ public class CursoService {
     private CursoRepository cursoRepository;
 
     public Curso cadastrarCurso(Curso curso){
-        return cursoRepository.save(curso);
+        return this.cursoRepository.save(curso);
     }
 
     public List<Curso> listarCursos(){
-        return cursoRepository.findAll(Sort.by(Sort.Direction.ASC, "nome"));
+        return this.cursoRepository.findAll(Sort.by(Sort.Direction.ASC, "nome"));
     }
 
     public Optional<Curso> buscarPorNome(String nome){
-        return cursoRepository.findByNome(nome);
+        return this.cursoRepository.findByNome(nome);
     }
 
     public Optional<Curso> buscarPorId(Long id){
-        return cursoRepository.findById(id);
+        return this.cursoRepository.findById(id);
     }
 
     public Curso editarCurso(Long id, Curso cursoAtualizado){
@@ -37,12 +37,12 @@ public class CursoService {
             curso.setNomeCurso(cursoAtualizado.getNomeCurso());
             curso.setProfessor(cursoAtualizado.getProfessor());
             curso.setCargaHoraria(cursoAtualizado.getCargaHoraria());
-            return cursoRepository.save(curso);
+            return this.cursoRepository.save(curso);
         }).orElseThrow(() -> new RuntimeException("Curso não encontrado!"));
     }
 
     public void deletarCurso(Long id){
-        cursoRepository.deleteById(id);
+        this.cursoRepository.deleteById(id);
     }
 
 }
