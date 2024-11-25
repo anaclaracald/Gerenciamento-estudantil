@@ -18,9 +18,6 @@ public class CadastrarEstudante extends JFrame {
     private JButton buttonVoltar;
     private JPanel janelaCadEstudante;
 
-    @Autowired
-    private EstudanteService estudanteService; // injeta o serviço com os métodos
-
     public CadastrarEstudante() {
         // Primeiras configurações
         setContentPane(janelaCadEstudante);
@@ -29,6 +26,7 @@ public class CadastrarEstudante extends JFrame {
         setSize(600, 400);
         setLocationRelativeTo(null);
 
+        EstudanteService estudanteService = new EstudanteService();
 
         buttonVoltar.addActionListener(new ActionListener() { // Botão voltar (fecha aba)
             @Override

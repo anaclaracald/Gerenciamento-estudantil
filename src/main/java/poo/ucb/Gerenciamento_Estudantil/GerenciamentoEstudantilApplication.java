@@ -3,11 +3,13 @@ package poo.ucb.Gerenciamento_Estudantil;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import poo.ucb.Gerenciamento_Estudantil.view.*;
 
 import javax.swing.SwingUtilities;
 
 @SpringBootApplication(scanBasePackages = "poo.ucb.Gerenciamento_Estudantil")
+@ComponentScan(basePackages = "poo.ucb.Gerenciamento_Estudantil")
 public class GerenciamentoEstudantilApplication {
 
 	public static void main(String[] args) {

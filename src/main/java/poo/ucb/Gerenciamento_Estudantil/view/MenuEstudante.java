@@ -14,11 +14,7 @@ public class MenuEstudante extends JFrame {
     private JButton SAIRButton;
     private JPanel janelaEstudante;
 
-    @Autowired
-    private ConsultarEstudante consultarEstudante;
 
-    @Autowired
-    private CadastrarEstudante cadastrarEstudante;
 
     public MenuEstudante () {
     // Primeiras configurações
@@ -38,6 +34,7 @@ public class MenuEstudante extends JFrame {
         CADASTRARESTUDANTEButton.addActionListener(new ActionListener() { // Abrir aba Cadastrar Estudante
             @Override
             public void actionPerformed(ActionEvent e) {
+                CadastrarEstudante cadastrarEstudante = new CadastrarEstudante();
                 cadastrarEstudante.setVisible(true);
             }
         });
@@ -45,6 +42,7 @@ public class MenuEstudante extends JFrame {
         CONSULTARButton.addActionListener(new ActionListener() { // Abrir aba Consultar Estudante
             @Override
             public void actionPerformed(ActionEvent e) {
+                ConsultarEstudante consultarEstudante = new ConsultarEstudante();
                 consultarEstudante.setVisible(true);
             }
         });

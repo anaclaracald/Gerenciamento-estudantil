@@ -18,8 +18,7 @@ public class CadastrarProfessor extends JFrame {
     private JButton buttonVoltar;
     private JPanel janelaCadProfessor;
 
-    @Autowired
-    private ProfessorService professorService;
+    ProfessorService professorService = new ProfessorService();
 
     public CadastrarProfessor() {
     // Primeiras configurações
